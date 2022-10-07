@@ -6,11 +6,11 @@ RUN  \
     apt-get -y upgrade && \
     apt-get install -y vim wget curl git
 
-RUN wget --no-check-certificate https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-RUN tar -xvf apache-maven-3.6.3-bin.tar.gz
-RUN mv apache-maven-3.6.3 /opt/
+RUN wget https://archive.apache.org/dist/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz
+RUN tar -xvf apache-maven-3.1.1-bin.tar.gz
+RUN mv apache-maven-3.1.1 /opt/
 
-ENV M2_HOME='/opt/apache-maven-3.6.3'
+ENV M2_HOME='/opt/apache-maven-3.1.1'
 ENV PATH="$M2_HOME/bin:$PATH"
 
 CMD ["/bin/bash"]
